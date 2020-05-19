@@ -70,7 +70,7 @@ export class CriarContaPage implements OnInit {
      if (this.formCadastro.valid){
      this.usuario = this.formCadastro.value as Usuario;
      delete this.usuario['confSenha'];
-     if (await this.usuarioService.senha(this.usuario)){
+     if (await this.usuarioService.salvar(this.usuario)){
        this.alertCadastro('Sucesso', 'Sucesso ao salvar');
        this.router.navigateByUrl('/home');
      }else{
@@ -86,7 +86,7 @@ export class CriarContaPage implements OnInit {
      const alert = await this.alertController.create({
        header: titulo,
        message: msg,
-       button: ['ok']
+       buttons: ['ok']
      });
      await alert.present();
    }

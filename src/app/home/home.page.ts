@@ -64,13 +64,15 @@ export class HomePage {
        header: "ERRO!",
        message: "formulario invalido",
        buttons: ['ok']
-     })
+     });
+     await alert.present();
     }
      async alertUserInvalid(){
       const alert = await this.alertController.create({
         header: "ERRO!",
         message: "E-mail ou Senha Não existe",
         buttons: ['ok']
-      })
+      });
+     await alert.present();
    }
 }
