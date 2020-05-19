@@ -1,0 +1,98 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+        <ion-card-header>
+          <ion-card-title>Sistema</ion-card-title>
+        </ion-card-header>
+      
+        <form [formGroup]="formCadastro" (mgSubmit)="SalvarUsuario()">
+          <ion-item>
+            <ion-label position="flooLing">Nome Completo</ion-label>
+            <ion-input formControlName="nome" type="text"></ion-input>
+            <ng-container *ngFor="let erro of mensagem_validacao.nome">
+              <span *ngIf="formLogin.get('nome').hasError(erro.tipo) && (formLogin.get('nome').dirty || formLogin.get('nome').touched)" class="msg-erro">
+              {{erro.mensagem}}
+              </span>
+            </ng-container>
+          </ion-item>
+
+         <ion-item>
+            <ion-label >sexo</ion-label>
+            <ion-select rmControlName="sexo" type="selicione()">
+              <ion-select-option value="M">Maculino</ion-select-option>
+              <ion-select-option value="F">Feminino</ion-select-option> </ion-select>
+            <ng-container *ngFor="let erro of mensagem_validacao.sexo">
+              <span *ngIf="formLogin.get('sexo').hasError(erro.tipo) && (formLogin.get('sexo').dirty || formLogin.get('sexo').touched)" class="msg-erro">
+              {{erro.mensagem}}
+              </span>
+            </ng-container>
+          </ion-item>
+
+          <ion-item>
+            <ion-label >CPF</ion-label>
+            <ion-input rmControlName="cpf" type="text" max="12" placeholder="somente numeros">
+              </ion-input>
+            <ng-container *ngFor="let erro of mensagem_validacao.cpf">
+              <span *ngIf="formLogin.get('cpf').hasError(erro.tipo) && (formLogin.get('cpf').dirty || formLogin.get('cpf').touched)" class="msg-erro">
+              {{erro.mensagem}}
+              </span>
+            </ng-container>
+          </ion-item>
+
+          <ion-item>
+            <ion-input >Data De Nascimento</ion-input>
+            <ion-select rmControlName="dataDeNascimento" display-format="DD/MM/AAAA" max="12" placeholder="selecione a data">
+              </ion-select>
+            <ng-container *ngFor="let erro of mensagem_validacao.dataDeNascimento">
+              <span *ngIf="formLogin.get('dataDeNascimento').hasError(erro.tipo) && (formLogin.get('dataDeNascimento').dirty || formLogin.get('dataDeNascimento').touched)" class="msg-erro">
+              {{erro.mensagem}}
+              </span>
+            </ng-container>
+          </ion-item>
+
+           <ion-item>
+            <ion-label position="flooLing">E-mail</ion-label>
+            <ion-input formControlName="email" type="text"></ion-input>
+            <ng-container *ngFor="let erro of mensagem_validacao.email">
+              <span *ngIf="formLogin.get('email').hasError(erro.tipo) && (formLogin.get('email').dirty || formLogin.get('email').touched)" class="msg-erro">
+              {{erro.mensagem}}
+              </span>
+            </ng-container>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label position="stacked">Senha</ion-label>
+            <ion-input formControlName="senha" type="password"></ion-input>
+            <ng-container *ngFor="let erro of mensagem_validacao.senha">
+              <span *ngIf="formLogin.get('senha').hasError(erro.tipo) && (formLogin.get('senha').dirty || formLogin.get('senha').touched)" class="msg-erro">
+              {{erro.mensagem}}
+              </span>
+              </ng-container>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Comfirmação de senha</ion-label>
+            <ion-input formControlName="confSenha" type="password"></ion-input>
+            <ng-container *ngFor="let erro of mensagem_validacao.confSenha">
+              <span *ngIf="formLogin.get('confSenha').hasError(erro.tipo) && (formLogin.get('confSenha').dirty || formLogin.get('confSenha').touched)" class="msg-erro">
+              {{erro.mensagem}}
+              </span>
+              </ng-container>
+          </ion-item>
+          
+          <ion-item>
+          <ion-button expand="block" color="primary" type="submit">Salvar</ion-button>
+          </ion-item>
+
+        
+        </form>
+      </ion-card>
+</ion-content>
