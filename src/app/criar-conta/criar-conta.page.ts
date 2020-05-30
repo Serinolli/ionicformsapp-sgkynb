@@ -54,9 +54,9 @@ export class CriarContaPage implements OnInit {
       email: ['', Validators.compose([Validators.email, Validators.required])],
       senha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(12), Validators.required])],
       nome: ['', Validators.compose([Validators.required, Validators.minLength(2)])],
-      cpf: ['', Validators.compose([Validators.required, CpfValidator.cpfValido])],
+      //cpf: ['', Validators.compose([Validators.required, CpfValidator.cpfValido])],
       sexo: ['', Validators.compose([Validators.required])],
-      dataDeNascimento: ['', Validators.compose([Validators.required])],
+      //dataDeNascimento: ['', Validators.compose([Validators.required])],
       confSenha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(12), Validators.required])]
       
 

@@ -1,20 +1,20 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="login">
     <ion-title>
-      Criar Conta
+      Alugall
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-        <ion-card-header>
-          <ion-card-title>Sistema</ion-card-title>
+  <ion-card color="cinza">
+        <ion-card-header >
+          <ion-card-title>Criar Conta </ion-card-title>
         </ion-card-header>
       
         <form [formGroup]="formCadastro" (mgSubmit)="SalvarUsuario()">
           <ion-item>
-            <ion-label position="flooLing">Nome Completo</ion-label>
+            <ion-label position="stacked">Nome Completo</ion-label>
             <ion-input formControlName="nome" type="text"></ion-input>
             <ng-container *ngFor="let erro of mensagem_validacao.nome">
               <span *ngIf="formCadastro.get('nome').hasError(erro.tipo) && (formCadastro.get('nome').dirty || formCadastro.get('nome').touched)" class="msg-erro">
@@ -35,7 +35,7 @@
             </ng-container>
           </ion-item>
 
-          <ion-item>
+          <!--<ion-item>
             <ion-label >CPF</ion-label>
             <ion-input rmControlName="cpf" type="text" max="12" placeholder="somente numeros">
               </ion-input>
@@ -55,10 +55,10 @@
               {{erro.mensagem}}
               </span>
             </ng-container>
-          </ion-item>
+          </ion-item>-->
 
            <ion-item>
-            <ion-label position="flooLing">E-mail</ion-label>
+            <ion-label position="stacked">E-mail</ion-label>
             <ion-input formControlName="email" type="text"></ion-input>
             <ng-container *ngFor="let erro of mensagem_validacao.email">
               <span *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)" class="msg-erro">
@@ -88,9 +88,9 @@
               </ng-container>
           </ion-item>
           
-          <ion-item>
-          <ion-button expand="block" color="primary" type="submit">Salvar</ion-button>
-          </ion-item>
+          
+          <ion-button expand="block" color="primary" type="submit" color="login" type=(ngSubmit)>Salvar</ion-button>
+          
 
         
         </form>

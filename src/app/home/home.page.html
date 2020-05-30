@@ -1,15 +1,15 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="login" >
     <ion-title>
-      Login
+      Alugall
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-        <ion-card-header>
-          <ion-card-title>Sistema</ion-card-title>
+  <ion-card> 
+        <ion-card-header color="cinza">
+          <ion-card-title>Login</ion-card-title>
         </ion-card-header>
       
         <form [formGroup]="formLogin" (mgSubmit)="login()">
@@ -35,8 +35,8 @@
             </ng-container>
           </ion-item>
           
-          <br>
-          <ion-button expand="block" color="primary" type=(ngSubmit)>Login</ion-button>
+          
+          <ion-button expand="block" color="login" type=(ngSubmit)>Login</ion-button>
           <ion-button expand="block" fill="outline" color="primary"  routerLink="../criar-conta">Criar Conta</ion-button>
           
 

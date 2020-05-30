@@ -18,7 +18,7 @@ export class HomePage {
 
   public mensagem_validacao = {
 
-    email:[
+    email: [
       {tipo: 'required', mensagem: 'o campo E-mail é obrigatorio.'},
       {tipo: 'email', mensagem: 'E-mail invalido'},
     ],
